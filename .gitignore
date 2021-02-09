@@ -1,1 +1,10 @@
-node_modules
+# Git Ignore Items
+dist/
+.vscode
+*.log
+.DS_Store
+node_modules/*
+*.gz
+*.iml
+.idea/*
+*.swp
