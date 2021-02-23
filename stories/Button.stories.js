@@ -15,8 +15,7 @@ export default {
 };
 
 const Template = ({ label, ...args }) => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  //return `<button class="usa-button ">${label}</button>`;
+  // Code template to cut and copy etc - blah blah..
   return createButton({ label, ...args });
 };
 
