@@ -1,15 +1,14 @@
 import { createButton } from "./Button";
-import USWDS from "../node_modules/uswds/src/js/components";
-const { button } = USWDS;
 
 export default {
   title: "Example/Button",
   argTypes: {
     label: { control: "text" },
-    primary: { control: "boolean" },
-    backgroundColor: { control: "color" },
-    size: {
-      control: { type: "select", options: ["small", "medium", "large"] },
+    mode: {
+      control: {
+        type: "select",
+        options: ["primary", "secondary", "disabled"],
+      },
     },
     onClick: { action: "onClick" },
   },
@@ -17,29 +16,24 @@ export default {
 
 const Template = ({ label, ...args }) => {
   // You can either use a function to create DOM elements or use a plain html string!
-  return `<button class="usa-button ">${label}</button>`;
-  //return createButton({ label, ...args });
+  //return `<button class="usa-button ">${label}</button>`;
+  return createButton({ label, ...args });
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
-  label: "Button",
+  mode: "primary",
+  label: "Primary Button",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: "Button",
+  mode: "secondary",
+  label: "Secondary Button",
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
-  label: "Button",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-  label: "Button",
+export const Disabled = Template.bind({});
+Disabled.args = {
+  mode: "disabled",
+  label: "Disabled Button",
 };

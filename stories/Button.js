@@ -1,25 +1,14 @@
 import "./button.scss";
+//import USWDS from "../node_modules/uswds/src/js/components";
+//const { button } = USWDS;
 
-export const createButton = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  onClick,
-}) => {
+export const createButton = ({ mode = primary, label, onClick }) => {
   const btn = document.createElement("button");
   btn.type = "button";
   btn.innerText = label;
   btn.addEventListener("click", onClick);
 
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
-  btn.className = ["storybook-button", `storybook-button--${size}`, mode].join(
-    " "
-  );
-
-  btn.style.backgroundColor = backgroundColor;
+  btn.className = `usa-button usa-button--${mode}`;
 
   return btn;
 };

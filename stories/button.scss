@@ -1,30 +1,409 @@
-.storybook-button {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+@import "./tokens.scss";
+
+button {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+button:not([disabled]):focus {
+  outline: 0.25rem solid $primary-darker;
+  outline-offset: 0;
+}
+
+.usa-button {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial,
+    sans-serif;
+  font-size: 1.06rem;
+  line-height: 0.9;
+  color: white;
+  background-color: $primary;
+  appearance: none;
   border: 0;
-  border-radius: 3em;
+  border-radius: 0.25rem;
   cursor: pointer;
   display: inline-block;
-  line-height: 1;
+  font-weight: 700;
+  margin-right: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
 }
-.storybook-button--primary {
+@media all and (min-width: 30em) {
+  .usa-button {
+    width: auto;
+  }
+}
+
+.usa-button:visited {
   color: white;
-  background-color: #1ea7fd;
 }
-.storybook-button--secondary {
-  color: #333;
+
+.usa-button:hover,
+.usa-button.usa-button--hover {
+  color: white;
+  background-color: $primary-dark;
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+.usa-button:active,
+.usa-button.usa-button--active {
+  color: white;
+  background-color: $primary-darker;
+}
+
+.usa-button:not([disabled]):focus,
+.usa-button:not([disabled]).usa-focus {
+  outline-offset: 0.25rem;
+}
+
+.usa-button:disabled {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: $base-light;
+  color: white;
+  pointer-events: none;
+}
+
+.usa-button:disabled:hover,
+.usa-button:disabled.usa-button--hover,
+.usa-button:disabled:active,
+.usa-button:disabled.usa-button--active,
+.usa-button:disabled:focus,
+.usa-button:disabled.usa-focus {
+  background-color: $base-light;
+  border: 0;
+  box-shadow: none;
+}
+
+.usa-button--accent-cool {
+  color: #1b1b1b;
+  background-color: $accent-cool;
+}
+
+.usa-button--accent-cool:visited {
+  color: #1b1b1b;
+  background-color: $accent-cool;
+}
+
+.usa-button--accent-cool:hover,
+.usa-button--accent-cool.usa-button--hover {
+  color: #1b1b1b;
+  background-color: $accent-cool-dark;
+}
+
+.usa-button--accent-cool:active,
+.usa-button--accent-cool.usa-button--active {
+  color: white;
+  background-color: $accent-cool-darker;
+}
+
+.usa-button--accent-warm {
+  color: #1b1b1b;
+  background-color: $accent-warm;
+}
+
+.usa-button--accent-warm:visited {
+  color: #1b1b1b;
+  background-color: $accent-warm;
+}
+
+.usa-button--accent-warm:hover,
+.usa-button--accent-warm.usa-button--hover {
+  color: white;
+  background-color: $accent-warm-dark;
+}
+
+.usa-button--accent-warm:active,
+.usa-button--accent-warm.usa-button--active {
+  color: white;
+  background-color: $accent-warm-darker;
+}
+
+.usa-button--outline {
   background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  box-shadow: inset 0 0 0 2px $primary;
+  color: $primary;
 }
-.storybook-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
+
+.usa-button--outline:visited {
+  color: $primary;
 }
-.storybook-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
+
+.usa-button--outline:hover,
+.usa-button--outline.usa-button--hover {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px $primary-dark;
+  color: $primary-dark;
 }
-.storybook-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+
+.usa-button--outline:active,
+.usa-button--outline.usa-button--active {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px $primary-darker;
+  color: $primary-darker;
+}
+
+.usa-button--outline.usa-button--inverse {
+  box-shadow: inset 0 0 0 2px $base-light;
+  color: $base-light;
+}
+
+.usa-button--outline.usa-button--inverse:visited {
+  color: $base-light;
+}
+
+.usa-button--outline.usa-button--inverse:hover,
+.usa-button--outline.usa-button--inverse.usa-button--hover {
+  box-shadow: inset 0 0 0 2px $base-lighter;
+  color: $base-lighter;
+}
+
+.usa-button--outline.usa-button--inverse:active,
+.usa-button--outline.usa-button--inverse.usa-button--active {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px white;
+  color: white;
+}
+
+.usa-button--outline.usa-button--inverse.usa-button--unstyled {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: $primary;
+  text-decoration: underline;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  color: $base-lighter;
+}
+
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:visited {
+  color: $primary;
+}
+
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:hover {
+  color: $primary-dark;
+}
+
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:active {
+  color: $primary-darker;
+}
+
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:focus {
+  outline: 0.25rem solid $primary-dark;
+  outline-offset: 0;
+}
+
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:hover,
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:active {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:visited {
+  color: #e6e6e6;
+}
+
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:hover,
+.usa-button--outline.usa-button--inverse.usa-button--unstyled.usa-button--hover {
+  color: #f0f0f0;
+}
+
+.usa-button--outline.usa-button--inverse.usa-button--unstyled:active,
+.usa-button--outline.usa-button--inverse.usa-button--unstyled.usa-button--active {
+  color: white;
+}
+
+.usa-button--base {
+  color: white;
+  background-color: $base;
+}
+
+.usa-button--base:hover,
+.usa-button--base.usa-button--hover {
+  color: white;
+  background-color: $base-dark;
+}
+
+.usa-button--base:active,
+.usa-button--base.usa-button--active {
+  color: white;
+  background-color: $base-darker;
+}
+
+.usa-button--secondary {
+  color: white;
+  background-color: $secondary;
+}
+
+.usa-button--secondary:hover,
+.usa-button--secondary.usa-button--hover {
+  color: white;
+  background-color: $secondary-dark;
+}
+
+.usa-button--secondary:active,
+.usa-button--secondary.usa-button--active {
+  color: white;
+  background-color: $secondary-darker;
+}
+
+.usa-button--big {
+  border-radius: 0.25rem;
+  font-size: 1.33rem;
+  padding: 1rem 1.5rem;
+}
+
+.usa-button--disabled {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: $base;
+  color: white;
+  pointer-events: none;
+}
+
+.usa-button--disabled:hover,
+.usa-button--disabled.usa-button--hover,
+.usa-button--disabled:active,
+.usa-button--disabled.usa-button--active,
+.usa-button--disabled:focus,
+.usa-button--disabled.usa-focus {
+  background-color: $base;
+  border: 0;
+  box-shadow: none;
+}
+
+.usa-button--outline-disabled,
+.usa-button--outline-inverse-disabled,
+.usa-button--outline:disabled,
+.usa-button--outline-inverse:disabled,
+.usa-button--outline-inverse:disabled {
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.usa-button--outline-disabled:hover,
+.usa-button--outline-disabled.usa-button--hover,
+.usa-button--outline-disabled:active,
+.usa-button--outline-disabled.usa-button--active,
+.usa-button--outline-disabled:focus,
+.usa-button--outline-disabled.usa-focus,
+.usa-button--outline-inverse-disabled:hover,
+.usa-button--outline-inverse-disabled.usa-button--hover,
+.usa-button--outline-inverse-disabled:active,
+.usa-button--outline-inverse-disabled.usa-button--active,
+.usa-button--outline-inverse-disabled:focus,
+.usa-button--outline-inverse-disabled.usa-focus,
+.usa-button--outline:disabled:hover,
+.usa-button--outline:disabled.usa-button--hover,
+.usa-button--outline:disabled:active,
+.usa-button--outline:disabled.usa-button--active,
+.usa-button--outline:disabled:focus,
+.usa-button--outline:disabled.usa-focus,
+.usa-button--outline-inverse:disabled:hover,
+.usa-button--outline-inverse:disabled.usa-button--hover,
+.usa-button--outline-inverse:disabled:active,
+.usa-button--outline-inverse:disabled.usa-button--active,
+.usa-button--outline-inverse:disabled:focus,
+.usa-button--outline-inverse:disabled.usa-focus,
+.usa-button--outline-inverse:disabled:hover,
+.usa-button--outline-inverse:disabled.usa-button--hover,
+.usa-button--outline-inverse:disabled:active,
+.usa-button--outline-inverse:disabled.usa-button--active,
+.usa-button--outline-inverse:disabled:focus,
+.usa-button--outline-inverse:disabled.usa-focus {
+  background-color: transparent;
+  border: 0;
+}
+
+.usa-button--outline-disabled,
+.usa-button--outline:disabled {
+  box-shadow: inset 0 0 0 2px $base;
+  color: $base;
+}
+
+.usa-button--outline-disabled.usa-button--inverse,
+.usa-button--outline:disabled.usa-button--inverse {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px $base-light;
+  color: $base-light;
+}
+
+.usa-button--unstyled {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: $primary;
+  text-decoration: underline;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.usa-button--unstyled:visited {
+  color: $primary-dark;
+}
+
+.usa-button--unstyled:hover {
+  color: $primary-darker;
+}
+
+.usa-button--unstyled:active {
+  color: $primary-light;
+}
+
+.usa-button--unstyled:focus {
+  outline: 0.25rem solid $primary-dark;
+  outline-offset: 0;
+}
+
+.usa-button--unstyled:hover,
+.usa-button--unstyled:active {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
 }
