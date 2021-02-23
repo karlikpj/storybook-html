@@ -7,7 +7,7 @@ export default {
     mode: {
       control: {
         type: "select",
-        options: ["primary", "secondary", "disabled"],
+        options: ["primary", "secondary", "outline", "default"],
       },
     },
     onClick: { action: "onClick" },
@@ -29,10 +29,4 @@ export const Secondary = Template.bind({});
 Secondary.args = {
   mode: "secondary",
   label: "Secondary Button",
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  mode: "disabled",
-  label: "Disabled Button",
 };
